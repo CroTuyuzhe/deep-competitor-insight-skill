@@ -17,9 +17,34 @@ import argparse
 import json
 import operator
 import re
+import subprocess
 import sys
 from datetime import datetime
 from typing import Annotated, Dict, List, Optional, TypedDict
+
+
+def _check_deps():
+    """检查并自动安装缺失依赖"""
+    missing = []
+    for pkg, imp in [("ddgs", "ddgs"), ("langgraph", "langgraph")]:
+        try:
+            __import__(imp)
+        except ImportError:
+            missing.append(pkg)
+    if missing:
+        print(f"正在安装缺失依赖: {', '.join(missing)} ...")
+        try:
+            subprocess.check_call(
+                [sys.executable, "-m", "pip", "install", "-q"] + missing,
+                stdout=subprocess.DEVNULL,
+            )
+            print("依赖安装完成。")
+        except subprocess.CalledProcessError:
+            print(f"错误: 依赖安装失败，请手动执行: pip install {' '.join(missing)}", file=sys.stderr)
+            sys.exit(1)
+
+
+_check_deps()
 
 from langgraph.graph import END, StateGraph
 

@@ -25,7 +25,7 @@ description: |
 ### Step 2: 运行分析脚本
 
 ```bash
-cd {baseDir}/scripts && pip3 install -q ddgs langgraph 2>/dev/null; python3 competitor_analysis.py \
+cd {baseDir}/scripts && pip3 install -q ddgs langgraph || echo "⚠️ 依赖安装失败，请手动执行: pip3 install ddgs langgraph"; python3 competitor_analysis.py \
   --query "<用户原始查询>" \
   --depth <basic|standard|deep|strategic> \
   --focus "<聚焦维度，如有>" \
