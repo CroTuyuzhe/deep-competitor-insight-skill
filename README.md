@@ -32,7 +32,7 @@
 deep-competitor-insight ❯
   🔍 意图解析: AI陪伴 | 深度: deep | 区域: 国内+海外
   🌐 行业全景: 市场规模 $263亿(2023) → $1408亿(2030), CAGR 32-39%
-  📦 产品筛选: Character.AI / Replika / 星野 / Talkie / EVE 等 8 个
+  📦 产品筛选: Character.AI / Replika / 猫箱 / 星野 / Talkie / EVE 等 8 个
   🔬 产品深挖: 定位 / 功能 / 商业模式 / 差异化 × 8
   😤 用户痛点: 平台关停数据丢失 / 内容安全 / 青少年依赖
   📊 竞品对比: 8 维度 × 8 产品矩阵
