@@ -25,7 +25,7 @@ description: |
 ### Step 2: 运行分析脚本
 
 ```bash
-cd {baseDir}/scripts && pip3 install -q ddgs langgraph || echo "⚠️ 依赖安装失败，请手动执行: pip3 install ddgs langgraph"; python3 competitor_analysis.py \
+cd {baseDir}/scripts && python3 competitor_analysis.py \
   --query "<用户原始查询>" \
   --depth <basic|standard|deep|strategic> \
   --focus "<聚焦维度，如有>" \
@@ -33,6 +33,8 @@ cd {baseDir}/scripts && pip3 install -q ddgs langgraph || echo "⚠️ 依赖安
   --format json \
   --verbose
 ```
+
+> 脚本内置依赖检测（`_check_deps()`），首次运行时若缺少 `ddgs` 或 `langgraph` 会自动安装，无需手动 pip install。
 
 **CLI 参数说明：**
 
